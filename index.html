@@ -128,16 +128,16 @@
                             tochkiElementi.eq(tochkaLocationId).show();
                         }
 
-                        // Премини на следниот елемент на клик на копче
+                        // Премини на следната точка на клик на копче
                         $(".btn-next").click(function () {
-                            // Провери кој елемент е видлив
+                            // Провери која точка е видлива
                             var vidlivaTochka = tochkiElementi.filter(':visible');
                             var slednaTochka = $(vidlivaTochka).next(tochkiElementi);
 
                             // Скриј ги сите точки
                             tochkiElementi.hide();
 
-                            // Прикажи го следниот во листата
+                            // Прикажи ја следната или првата точка во листата
                             if (slednaTochka.length === 0) {
                                 prvaTochka.show();
                             } else {
@@ -145,16 +145,16 @@
                             }
                         });
 
-                        // Премини на претходниот елемент на клик на копче
+                        // Премини на претходната точка на клик на копче
                         $(".btn-prev").click(function () {
-                            // Провери кој елемент е видлив
+                            // Провери која точка е видлива е видлива
                             var vidlivaTochka = tochkiElementi.filter(':visible');
                             var prethodnaTochka = $(vidlivaTochka).prev(tochkiElementi);
 
                             // Скриј ги сите точки
                             tochkiElementi.hide();
 
-                            // Прикажи го следниот во листата
+                            // Прикажи ја претходната или последната точка во листата
                             if (prethodnaTochka.length === 0) {
                                 poslednaTochka.show();
                             } else {
@@ -165,7 +165,7 @@
 
                         $(".btn-next, .btn-prev").click(function () {
 
-                            // Постави хеш за видлив елемент
+                            // Постави хеш за видливата точка
                             window.location.hash = "#" + tochkiElementi.filter(':visible').index();
                         });
 
