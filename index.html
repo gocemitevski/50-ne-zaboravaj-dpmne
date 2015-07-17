@@ -76,7 +76,14 @@
             </div>
             <footer>
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a9085b8059a33f" async="async"></script>
+                <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a9085b8059a33f" async="async"></script>
+                <script>
+                    var addthis_config =
+                            {
+                                data_ga_tracker: false,
+                                data_track_clickback: false
+                            };
+                </script>
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
                 <div class="addthis_sharing_toolbox"></div>
 
@@ -89,75 +96,75 @@
         </div>
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script>
-            // Земи листа и поединечни елементи
-            var tochkiElementi = $(".tochki li");
-            var prvaTochka = $(tochkiElementi).first();
-            var poslednaTochka = $(tochkiElementi).last();
-            var tochkaLocationHash = window.location.hash;
-            var tochkaLocationId = tochkaLocationHash.substring(1);
+                    // Земи листа и поединечни елементи
+                    var tochkiElementi = $(".tochki li");
+                    var prvaTochka = $(tochkiElementi).first();
+                    var poslednaTochka = $(tochkiElementi).last();
+                    var tochkaLocationHash = window.location.hash;
+                    var tochkaLocationId = tochkaLocationHash.substring(1);
 
-            // Овозможи прикажување на точките според вредноста на хеш во URL
-            $(window).on('hashchange', function () {
-                // Скриј ги сите точки
-                tochkiElementi.hide();
+                    // Овозможи прикажување на точките според вредноста на хеш во URL
+                    $(window).on('hashchange', function () {
+                        // Скриј ги сите точки
+                        tochkiElementi.hide();
 
-                // Прикажи ја точката што е посочена преку хеш
-                tochkiElementi.eq(document.location.hash.substring(1)).show();
-            });
+                        // Прикажи ја точката што е посочена преку хеш
+                        tochkiElementi.eq(document.location.hash.substring(1)).show();
+                    });
 
-            $(document).ready(function () {
+                    $(document).ready(function () {
 
-                // Прикажи ја соодветната точка зависно од тоа кој број е внесен во хеш
-                if (tochkaLocationId.length !== 0) {
+                        // Прикажи ја соодветната точка зависно од тоа кој број е внесен во хеш
+                        if (tochkaLocationId.length !== 0) {
 
-                    // Скриј ги сите точки
-                    tochkiElementi.hide();
+                            // Скриј ги сите точки
+                            tochkiElementi.hide();
 
-                    tochkiElementi.eq(tochkaLocationId).show();
-                }
+                            tochkiElementi.eq(tochkaLocationId).show();
+                        }
 
-                // Премини на следниот елемент на клик на копче
-                $(".btn-next").click(function () {
-                    // Провери кој елемент е видлив
-                    var vidlivaTochka = tochkiElementi.filter(':visible');
-                    var slednaTochka = $(vidlivaTochka).next(tochkiElementi);
+                        // Премини на следниот елемент на клик на копче
+                        $(".btn-next").click(function () {
+                            // Провери кој елемент е видлив
+                            var vidlivaTochka = tochkiElementi.filter(':visible');
+                            var slednaTochka = $(vidlivaTochka).next(tochkiElementi);
 
-                    // Скриј ги сите точки
-                    tochkiElementi.hide();
+                            // Скриј ги сите точки
+                            tochkiElementi.hide();
 
-                    // Прикажи го следниот во листата
-                    if (slednaTochka.length === 0) {
-                        prvaTochka.show();
-                    } else {
-                        slednaTochka.show();
-                    }
-                });
+                            // Прикажи го следниот во листата
+                            if (slednaTochka.length === 0) {
+                                prvaTochka.show();
+                            } else {
+                                slednaTochka.show();
+                            }
+                        });
 
-                // Премини на претходниот елемент на клик на копче
-                $(".btn-prev").click(function () {
-                    // Провери кој елемент е видлив
-                    var vidlivaTochka = tochkiElementi.filter(':visible');
-                    var prethodnaTochka = $(vidlivaTochka).prev(tochkiElementi);
+                        // Премини на претходниот елемент на клик на копче
+                        $(".btn-prev").click(function () {
+                            // Провери кој елемент е видлив
+                            var vidlivaTochka = tochkiElementi.filter(':visible');
+                            var prethodnaTochka = $(vidlivaTochka).prev(tochkiElementi);
 
-                    // Скриј ги сите точки
-                    tochkiElementi.hide();
+                            // Скриј ги сите точки
+                            tochkiElementi.hide();
 
-                    // Прикажи го следниот во листата
-                    if (prethodnaTochka.length === 0) {
-                        poslednaTochka.show();
-                    } else {
-                        prethodnaTochka.show();
-                    }
+                            // Прикажи го следниот во листата
+                            if (prethodnaTochka.length === 0) {
+                                poslednaTochka.show();
+                            } else {
+                                prethodnaTochka.show();
+                            }
 
-                });
+                        });
 
-                $(".btn-next, .btn-prev").click(function () {
+                        $(".btn-next, .btn-prev").click(function () {
 
-                    // Постави хеш за видлив елемент
-                    window.location.hash = "#" + tochkiElementi.filter(':visible').index();
-                });
+                            // Постави хеш за видлив елемент
+                            window.location.hash = "#" + tochkiElementi.filter(':visible').index();
+                        });
 
-            });
+                    });
         </script>
         <script type="text/javascript">
             WebFontConfig = {
