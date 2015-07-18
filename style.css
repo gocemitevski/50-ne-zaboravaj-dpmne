@@ -162,16 +162,23 @@ footer{
 }
 
 @media (max-width: 600px){
+
+    .img-finger{
+        max-width: 150px;
+    }
+
     .btn-next,
     .btn-prev{
-        padding: 2%;
+        font-size: 144%;
+        padding: 3% 0;
         margin: 0 2%;
         border-radius: 0.2em;
-        width: 40%;
+        width: 30%;
         position: relative;
     }
 
     .tochki{
+        font-size: 144%;
         margin: 5% 2% 8%;
     }
 
