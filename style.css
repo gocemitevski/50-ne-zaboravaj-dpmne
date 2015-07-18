@@ -23,7 +23,7 @@ button{
 
 a{
     color: inherit;
-    *color: #fff; /* Required for pre IE8 */
+    *color: #fff; /* Потребно за пред IE 8 */
 }
 
 .wrap{
@@ -79,13 +79,13 @@ nav{
 }
 
 .tochki li{
-    *display: none; /* Required for pre IE8 */
-    display: none\9; /* Required for IE8 */
+    *display: none; /* Потребно за пред IE 8 */
+    display: none\9; /* Потребно за IE 8 */
 }
 
 .tochki li:first-child{
-    *display: block; /* Required for pre IE8 */
-    display: block\9; /* Required for IE8 */
+    *display: block; /* Потребно за пред IE 8 */
+    display: block\9; /* Потребно за IE 8 */
 }
 
 .tochki li:not(:first-child){
