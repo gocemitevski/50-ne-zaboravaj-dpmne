@@ -12,7 +12,7 @@
 body{
     margin: 0 auto;
     text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed', 'Calibri', 'Liberation Sans', Sans, sans-serif;
     color: #fff;
     background-color: #B9001E;
 }
@@ -23,6 +23,7 @@ button{
 
 a{
     color: inherit;
+    *color: #fff; /* Required for pre IE8 */
 }
 
 .wrap{
@@ -75,6 +76,16 @@ nav{
     animation: 500ms fadeIn ease-in-out;
     padding: 5% 10%;
     color: #444;
+}
+
+.tochki li{
+    *display: none; /* Required for pre IE8 */
+    display: none\9; /* Required for IE8 */
+}
+
+.tochki li:first-child{
+    *display: block; /* Required for pre IE8 */
+    display: block\9; /* Required for IE8 */
 }
 
 .tochki li:not(:first-child){

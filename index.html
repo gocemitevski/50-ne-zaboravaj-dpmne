@@ -12,14 +12,21 @@
         <meta property="og:title" content="Педесет (50) не заборавај за ДПМНЕ">
         <meta property="og:description" content="Педесет (50) работи што не треба да бидат заборавени за владеењето на ВМРО-ДПМНЕ во времето на Никола Груевски">
         <meta property="og:image" content="https://gocemitevski.github.io/50-ne-zaboravaj-dpmne/img/pointing_finger-300x284.png">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.js"></script>
+        <![endif]-->
+
     </head>
     <body>
         <div class="wrap">
             <header>
                 <figure>
-                    <img class="img-finger" src="img/pointing_finger-300x284.png" alt="">
+                    <a href="https://gocemitevski.github.io/50-ne-zaboravaj-dpmne/"><img class="img-finger" src="img/pointing_finger-300x284.png" alt=""></a>
                 </figure>
-                <h1><a href="">Педесет (50) не заборавај за ДПМНЕ</a></h1>
+                <h1><a href="https://gocemitevski.github.io/50-ne-zaboravaj-dpmne/">Педесет (50) не заборавај за ДПМНЕ</a></h1>
             </header>
             <div class="main">
                 <nav>
@@ -167,6 +174,20 @@
 
                             // Постави хеш за видливата точка
                             window.location.hash = "#" + tochkiElementi.filter(':visible').index();
+                        });
+
+
+                        $(document).keydown(function (e) {
+                            if (e.which === 37) // left arrow
+                            {
+                                // your action here, for example
+                                $(".btn-prev").click();
+                            }
+                            else if (e.which === 39)    // right arrow
+                            {
+                                // your action here, for example
+                                $(".btn-next").click();
+                            }
                         });
 
                     });
