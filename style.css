@@ -50,6 +50,9 @@ figure{
 }
 
 .img-finger{
+    -moz-filter: drop-shadow(0 0 2em rgba(0,0,0,0.2));
+    -webkit-filter: drop-shadow(0 0 2em rgba(0,0,0,0.2));
+    filter: drop-shadow(0 0 2em rgba(0,0,0,0.2));
     max-width: 200px;
     border: 0;
 }
