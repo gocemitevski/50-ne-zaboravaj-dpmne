@@ -4,6 +4,7 @@ var prvaTochka = $(tochkiElementi).first();
 var poslednaTochka = $(tochkiElementi).last();
 var tochkaLocationHash = window.location.hash;
 var tochkaLocationId = tochkaLocationHash.substring(1);
+var idRandomTochka = getRandomInt(0, 49); // Земи вредност од 0 до 49 по случаен избор
 
 // Овозможи прикажување на точките според вредноста на хеш во URL
 $(window).on('hashchange', function () {
@@ -16,6 +17,11 @@ $(window).on('hashchange', function () {
 
 $(document).ready(function () {
 
+    // Прикажи предупредување на постари верзии на Internet Explorer
+    if (navigator.userAgent.match(/msie (5|6|7)\./i)) {
+        alert("Користите прастара верзија на Internet Explorer која овој веб-сајт не ја поддржува. Иако можеби ќе можете да го прегледувате сајтот, нешто сигурно нема да работи како што е предвидено.");
+    }
+
     // Прикажи ја соодветната точка зависно од тоа кој број е внесен во хеш
     if (tochkaLocationId.length !== 0) {
 
@@ -23,6 +29,18 @@ $(document).ready(function () {
         tochkiElementi.hide();
 
         tochkiElementi.eq(tochkaLocationId).show();
+    }
+    else {
+        // Провери дали вредноста е 21 и намалија за еден помалку
+        if (idRandomTochka === 21) {
+            idRandomTochka--;
+        }
+
+        // Прикажи точка по случаен избор
+        $(tochkiElementi).eq(idRandomTochka).show();
+
+        // Додај го редниот број на прикажаната точка на URL
+        document.location.hash = "#" + tochkiElementi.filter(':visible').index();
     }
 
     // Премини на следната точка на клик на копче
@@ -93,3 +111,9 @@ WebFontConfig = {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
 })();
+
+// Генерирај рандом цел број помеѓу две зададени вредности - преку MDN
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}

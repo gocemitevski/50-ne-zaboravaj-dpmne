@@ -87,16 +87,6 @@ nav{
 }
 
 .tochki li{
-    *display: none; /* Потребно за пред IE 8 */
-    display: none\9; /* Потребно за IE 8 */
-}
-
-.tochki li:first-child{
-    *display: block; /* Потребно за пред IE 8 */
-    display: block\9; /* Потребно за IE 8 */
-}
-
-.tochki li:not(:first-child){
     display: none;
 }
 
