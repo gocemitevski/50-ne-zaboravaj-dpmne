@@ -32,7 +32,7 @@ $(document).ready(function () {
     }
     else {
         // Провери дали вредноста е 21 и намалија за еден помалку
-        if (idRandomTochka === 21) {
+        if (idRandomTochka === 21 || idRandomTochka === 10) {
             idRandomTochka--;
         }
 
